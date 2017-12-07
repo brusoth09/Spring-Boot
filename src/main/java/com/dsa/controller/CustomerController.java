@@ -2,6 +2,8 @@ package com.dsa.controller;
 
 import com.dsa.annotation.Todo;
 import com.dsa.domain.Customer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.MediaType;
 import org.springframework.validation.annotation.Validated;
@@ -16,9 +18,12 @@ import javax.validation.constraints.NotNull;
 @RestController
 @Validated
 public class CustomerController {
+    private final Logger logger = LoggerFactory.getLogger(this.getClass());
+
     @Todo(author = "Burusothman", priority = Todo.Priority.HIGH, status = Todo.Status.STARTED)
     @RequestMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE, method = RequestMethod.POST)
     public HttpEntity<String> create(@Valid @NotNull @RequestBody Customer customer) {
-        return new HttpEntity<>("created successfuly");
+        logger.info("Create request created for customer with name : " + customer.getFirstName());
+        return new HttpEntity<>("created successfully");
     }
 }
