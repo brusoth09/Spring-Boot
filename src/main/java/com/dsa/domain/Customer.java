@@ -35,6 +35,4 @@ public class Customer {
     private String phoneNumber;
     private Gender gender;
     private Address address;
-
-
 }

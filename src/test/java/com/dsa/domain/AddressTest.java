@@ -2,7 +2,7 @@ package com.dsa.domain;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
 
 public class AddressTest {
     @Test
