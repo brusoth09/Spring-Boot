@@ -1,4 +1,4 @@
-package com.das.configuration;
+package com.dsa.configuration;
 
 
 import org.springframework.boot.autoconfigure.jms.DefaultJmsListenerContainerFactoryConfigurer;
